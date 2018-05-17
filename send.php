@@ -2,9 +2,9 @@
 
 //var_dump($_POST);
     $mobile= $_POST['phon_number'];
-   $smsgatewaycenter_com_url = "http://alerts.valueleaf.com/api/v4/?"; //SMS Gateway Center API URL
+   $smsgatewaycenter_com_url = ""; //SMS Gateway Center API URL
     //$smsgatewaycenter_com_mask = "SGCSMS"; //Your Approved Sender Name / Mask
-    $api_key = "A5a74fd8e93661163e5c0e3127c493f0b";
+    $api_key = "";
 
 
 function smsgatewaycenter_com_Send($mobile, $sendmessage, $debug=false){
@@ -12,7 +12,7 @@ function smsgatewaycenter_com_Send($mobile, $sendmessage, $debug=false){
         $parameters.= 'method=sms';
         $parameters.= '&api_key='.$api_key;
         $parameters.= '&to='.urlencode($mobile);
-        $parameters.= '&sender=VLFOTP';
+        $parameters.= '&sender=';
         $parameters.= '&message='.urlencode($sendmessage);
         $apiurl =  $smsgatewaycenter_com_url.$parameters;
         $ch = curl_init($apiurl);
